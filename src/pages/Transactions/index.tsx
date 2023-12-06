@@ -8,6 +8,7 @@ import {
   TransactionsTable,
 } from './styles'
 import { TransactionsContext } from '../../contexts/TransactionsContext'
+import { ptBrDateFormartter, ptBrRealFormartter } from '../../utils/formatter'
 
 interface Transactions {
   id: number
@@ -36,11 +37,13 @@ export function Transactions() {
                   <td>{transaction.description}</td>
                   <td>
                     <PriceHighlight variant={transaction.type}>
-                      {transaction.price}
+                      {ptBrRealFormartter.format(transaction.price)}
                     </PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
-                  <td>{transaction.createdAt}</td>
+                  <td>
+                    {ptBrDateFormartter.format(new Date(transaction.createdAt))}
+                  </td>
                 </tr>
               )
             })}
