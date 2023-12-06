@@ -36,7 +36,7 @@ export function Transactions() {
                   <td>{transaction.description}</td>
                   <td>
                     <PriceHighlight variant={transaction.type}>
-                      {transaction.description}
+                      {transaction.price}
                     </PriceHighlight>
                   </td>
                   <td>{transaction.category}</td>
