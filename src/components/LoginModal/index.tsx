@@ -4,7 +4,6 @@ import { At, Password, X } from 'phosphor-react'
 import * as z from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
 
 const loginFormSchema = z.object({
   email: z.string().email(),
